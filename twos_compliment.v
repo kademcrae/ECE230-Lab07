@@ -8,7 +8,7 @@ module twos_compliment(
 
     generate
         full_adder lsb(
-            .A(A[0]),
+            .A(~A[0]),
             .B(1'b1),
             .Cin(1'b0),
             .Y(Y[0]),
@@ -17,7 +17,7 @@ module twos_compliment(
     
         for (i=1; i<8; i=i+1) begin
             full_adder fa(
-                .A(A[i]),
+                .A(~A[i]),
                 .B(1'b0),
                 .Cin(carry[i-1]),
                 .Y(Y[i]),
